@@ -22,6 +22,7 @@ public class Bai16_RegisterTest extends BasicTest {
         Utils.hardWait(3);
         WebElement click=driver.findElement(By.xpath("//button[@class='woocommerce-Button woocommerce-button button woocommerce-form-register__submit']"));
         click.click();
+        Utils.hardWait(3);
         WebElement content=driver.findElement(By.xpath("//div[@class='woocommerce-notices-wrapper']"));
         Assert.assertEquals(content.getText(), "Lỗi: An account is already registered with your email address. Please log in.");
     }
