@@ -33,7 +33,8 @@ public class Bai16_LoginTest extends BasicTest {
         WebElement content=driver.findElement(By.xpath("//div[@class='woocommerce-MyAccount-content']"));
         Assert.assertTrue(content.getText().contains("thanhvinh231198"));
     }
-
+    
+    @Test()
     public void  loginTestFailed() throws Exception {
         // Launch website
         String url = "https://bantheme.xyz/hathanhauto/tai-khoan/";
