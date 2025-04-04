@@ -1,0 +1,55 @@
+package com;
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import java.util.ArrayList;
+
+import org.aspectj.apache.bcel.classfile.Module.Open;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.safari.SafariDriver.WindowType;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import com.utils.Utils;
+
+import io.appium.java_client.android.nativekey.KeyEvent;
+
+import com.utils.BasicTest;
+
+
+public class Bai18_TabTest extends BasicTest {
+    @Test()
+    public void  loginTestFailed() throws Exception {
+        // Launch website
+        String url = "https://bantheme.xyz/hathanhauto/tai-khoan/";
+        driver.get(url);
+        Assert.assertEquals(driver.getCurrentUrl(), url);
+        Utils.hardWait();
+         //email
+        //WebElement email=driver.findElement(By.xpath("//input[@id='username']"));
+        //email.sendKeys("thanhvinh231198@gmail.com");
+
+        //pass
+       // Utils.hardWait();
+       // WebElement pass=driver.findElement(By.xpath("//input[@name='password']"));
+       // pass.sendKeys("Vinhkute98@");
+        //CLickbtn
+       // Utils.hardWait(3);
+       // WebElement click=driver.findElement(By.xpath("//button[@name='login']"));
+       // click.click();
+       // WebElement content=driver.findElement(By.xpath("//div[@class='woocommerce-MyAccount-content']"));
+       // Assert.assertTrue(content.getText().contains("thanhvinh231198"));
+       // Utils.hardWait(3);
+    
+        ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(1)); driver.get(url);
+        Assert.assertEquals(driver.getCurrentUrl(), url);
+        driver.get(url);
+        Utils.hardWait(3);
+    }
+}
