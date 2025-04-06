@@ -88,7 +88,7 @@ public class Bai19_ICEHRM_LoginTest extends BasicTest {
             return errorMessage.getText();
             }catch(Exception e)
             {
-                System.out.println("Login button not found");
+                System.out.println("Login button not found ne");
                 return "";
             }
 

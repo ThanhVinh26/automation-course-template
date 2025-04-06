@@ -33,19 +33,19 @@ public class Bai18_TabTest extends BasicTest {
         Assert.assertEquals(driver.getCurrentUrl(), url);
         Utils.hardWait();
         //email
-        //WebElement email=driver.findElement(By.xpath("//input[@id='username']"));
-        //email.sendKeys("thanhvinh231198@gmail.com");
+        WebElement email=driver.findElement(By.xpath("//input[@id='username']"));
+        email.sendKeys("thanhvinh231198@gmail.com");
 
         //pass
-       // Utils.hardWait();
-        //WebElement pass=driver.findElement(By.xpath("//input[@name='password']"));
-        //pass.sendKeys("Vinhkute98@");
+    Utils.hardWait();
+        WebElement pass=driver.findElement(By.xpath("//input[@name='password']"));
+        pass.sendKeys("Vinhkute98@");
         //CLickbtn
-        //Utils.hardWait(3);
-       // WebElement click=driver.findElement(By.xpath("//button[@name='login']"));
-       // click.click();
-       // WebElement content=driver.findElement(By.xpath("//div[@class='woocommerce-MyAccount-content']"));
-       // Assert.assertTrue(content.getText().contains("thanhvinh231198"));
+        Utils.hardWait(3);
+        WebElement click=driver.findElement(By.xpath("//button[@name='login']"));
+        click.click();
+        WebElement content=driver.findElement(By.xpath("//div[@class='woocommerce-MyAccount-content']"));
+        Assert.assertTrue(content.getText().contains("thanhvinh231198"));
        
         Utils.hardWait(5000);
          
@@ -61,14 +61,15 @@ public class Bai18_TabTest extends BasicTest {
         Utils.hardWait(5000);
         driver.switchTo().window(tabs.get(0));
         driver.close();
+        Utils.hardWait(5000);
         tabs = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(0));
-        
+        Utils.hardWait(5000);
          //clicklogin
-        // WebElement clicklogin=driver.findElement(By.xpath("//strong[@class='block']"));
-         //clicklogin.click();
-        // WebElement content1=driver.findElement(By.xpath("//div[@class='woocommerce-MyAccount-content']"));
-         //Assert.assertTrue(content1.getText().contains("thanhvinh231198"));
+     WebElement clicklogin=driver.findElement(By.xpath("//strong[@class='block']"));
+         clicklogin.click();
+         WebElement content1=driver.findElement(By.xpath("//div[@class='woocommerce-MyAccount-content']"));
+         Assert.assertTrue(content1.getText().contains("thanhvinh231198"));
          
     }
 }
