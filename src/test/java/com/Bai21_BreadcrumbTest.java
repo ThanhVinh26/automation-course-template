@@ -29,16 +29,16 @@ public class Bai21_BreadcrumbTest extends BasicTest {
          Utils.hardWait();
 
         WebElement menu2 = driver.findElement(By.xpath("//li[@id='menu-item-465']"));
-     action.moveToElement(menu2).build().perform();
+        action.moveToElement(menu2).build().perform();
 
-     Utils.hardWait();
-     WebElement menu3 = driver.findElement(By.xpath("//li[@id='menu-item-470']"));
-     action.click(menu3).build().perform();
+         Utils.hardWait();
+        WebElement menu3 = driver.findElement(By.xpath("//li[@id='menu-item-470']"));
+         action.click(menu3).build().perform();
        
-     String message1 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//nav[@class='woocommerce-breadcrumb']"))).getText();
+         String message1 = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//nav[@class='woocommerce-breadcrumb']"))).getText();
 
         // WebElement errorMessage = driver.findElement(By.xpath("//ul[@class='woocommerce-error']"));
-        Assert.assertTrue(message1.contains("Hệ thống truyền động, Khung gầm"));
+         Assert.assertTrue(message1.contains("Hệ thống truyền động, Khung gầm"));
 
 
         
