@@ -13,19 +13,22 @@ public class LoginPage extends PageBase {
     private By usernameFiled=By.xpath("//input[@id='username']");
     private By passwordFiled=By.xpath("//input[@name='password']");
     private By loginbtn=By.xpath("//button[@name='login']");
-    private By mgserror=By.xpath("//ul[@class='woocommerce-error']");
+    private By mgserror=By.xpath("//strong[contains(text(),\"thanhvinh231198\")]");
 
     // Methods
-    public void enterUsername(String username) {
+    public LoginPage enterUsername(String username) {
         findElement(usernameFiled).sendKeys(username);
+        return this;
     }
 
-    public void enterPassword(String password) {
+    public LoginPage enterPassword(String password) {
         findElement(passwordFiled).sendKeys(password);
+        return this;
     }
 
-    public void clickLoginButton() {
+    public LoginPage clickLoginButton() {
         findElement(loginbtn).click();
+        return this;
     }
 
     public String getErrorMessage() {

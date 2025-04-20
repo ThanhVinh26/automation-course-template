@@ -23,14 +23,19 @@ public class Bai16_LoginTest extends BasicTest {
          //email
        // WebElement email=driver.findElement(By.xpath("//input[@id='username']"));
         //email.sendKeys("thanhvinh231198@gmail.com");
-        loginPage.enterUsername("thanhvinh231198@gmail.com");
+       // loginPage.enterUsername("thanhvinh231198@gmail.com");
         //pass
        // Utils.hardWait();
        // WebElement pass=driver.findElement(By.xpath("//input[@name='password']"));
        // pass.sendKeys("Vinhkute98@");
-       loginPage.enterPassword("Vinhkute98@");
+      // loginPage.enterPassword("Vinhkute98@");
         //CLickbtn
-        loginPage.clickLoginButton();
+       // loginPage.clickLoginButton();
+        //
+
+        loginPage.enterUsername("thanhvinh231198@gmail.com")
+                  .enterPassword("Vinhkute98@")
+                  .clickLoginButton();
        // Utils.hardWait(3);
        // WebElement click=driver.findElement(By.xpath("//button[@name='login']"));
        // click.click();

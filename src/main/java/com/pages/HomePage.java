@@ -2,6 +2,7 @@ package com.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class HomePage extends PageBase {
     
@@ -18,20 +19,34 @@ public class HomePage extends PageBase {
 
 
     // Methods
-    public void clickSearch(String keyword) {
+    public HomePage clickSearch(String keyword) {
         findElement(clickSearch).sendKeys(keyword);
+        return this;
     }
 
-    public void clickItem() {
+    public HomePage clickItem() {
         findElement(selectitem).click();
+        return this;
     }
 
-    public void clickItem1() {
+    public HomePage clickItem1() {
         findElement(selectitem1).click();
+        return this;
     }
-    public void selectOption(){
+    public HomePage selectOption(){
         findElement(clickbtn).click();
+        return this;
     }
 
+     public void clickItemlist(String itemlist) {
+        String locator = "//a[contains(text(),'" + itemlist + "')]";
+        findElement(By.xpath(locator)).click();
+    }
+
+    public void clickXs(String itemlist1)
+    {
+        String locator1 = "//option[@value='" + itemlist1 + "']";
+        findElement(By.xpath(locator1)).click();
+    }
   
 }

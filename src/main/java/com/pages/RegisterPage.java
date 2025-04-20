@@ -11,21 +11,24 @@ public class RegisterPage extends PageBase {
 
     // Locators
     private By usernameRegister=By.xpath("//input[@id='reg_email']");
-    private By passwordRegister=By.xpath("//input[@name='reg_password']");
+    private By passwordRegister=By.xpath("//input[@id='c']");
     private By registerbtn=By.xpath("//button[@class='woocommerce-Button woocommerce-button button woocommerce-form-register__submit']");
     private By mgserrorregister=By.xpath("//ul[@class='woocommerce-error']//li");
 
     // Methods
-    public void enterUsername(String username) {
+    public RegisterPage enterUsername(String username) {
         findElement(usernameRegister).sendKeys(username);
+        return this;
     }
 
-    public void enterPassword(String password) {
+    public RegisterPage enterPassword(String password) {
         findElement(passwordRegister).sendKeys(password);
+        return this;
     }
 
-    public void clickLoginButton() {
+    public RegisterPage clickRegisterButton() {
         findElement(registerbtn).click();
+        return this;
     }
 
     public String getErrorMessage() {
