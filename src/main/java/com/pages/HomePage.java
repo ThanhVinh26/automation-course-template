@@ -11,8 +11,8 @@ public class HomePage extends PageBase {
     }
 
     // Locators
-    private By clickSearch=By.xpath("//input[@id='s'])[1]");
-    private By selectitem =By.xpath("//a[text()=\"Bơm nước xe \"]");
+    private By clickSearch=By.xpath("(//input[@id='s'])[1]");
+    private By selectitem =By.xpath("//a[contains(text()=\"Bơm nước xe \"]");
     private By selectitem1 =By.xpath("//select[@id=\"pa_xuat-xu\"]");
     private By selecoption =By.xpath("//option[@value=\"england\"]");
     private By clickbtn=By.xpath("(//button[@type=\"submit\"])[2]");
@@ -36,17 +36,20 @@ public class HomePage extends PageBase {
     public HomePage selectOption(){
         findElement(clickbtn).click();
         return this;
+        
     }
 
-     public void clickItemlist(String itemlist) {
+     public HomePage clickItemlist(String itemlist) {
         String locator = "//a[contains(text(),'" + itemlist + "')]";
         findElement(By.xpath(locator)).click();
+        return this;
     }
 
-    public void clickXs(String itemlist1)
+    public HomePage clickXs(String itemlist1)
     {
         String locator1 = "//option[@value='" + itemlist1 + "']";
         findElement(By.xpath(locator1)).click();
+        return this;
     }
   
 }
