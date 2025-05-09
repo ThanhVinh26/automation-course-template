@@ -4,48 +4,65 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
+import com.pages.HomePage;
+import com.pages.LoginPage;
 import com.utils.Utils;
 import com.utils.BasicTest;
 
 public class Bai17_ShoppingCartTest extends BasicTest {
     @Test()
-    public void  loginTestFailed() throws Exception {
+    public void  ShoppingCart() throws Exception {
+        HomePage homePage= new HomePage(driver);
+        LoginPage loginPage = new LoginPage(driver);
         // Launch website
         String url = "https://bantheme.xyz/hathanhauto/tai-khoan/";
         driver.get(url);
         Assert.assertEquals(driver.getCurrentUrl(), url);
         Utils.hardWait();
          //email
-        WebElement email=driver.findElement(By.xpath("//input[@id='username']"));
-        email.sendKeys("thanhvinh231198@gmail.com");
-
+        //WebElement email=driver.findElement(By.xpath("//input[@id='username']"));
+        //email.sendKeys("thanhvinh231198@gmail.com");
+       //loginPage.enterUsername("thanhvinh231198@gmail.com");
         //pass
         Utils.hardWait();
-        WebElement pass=driver.findElement(By.xpath("//input[@name='password']"));
-        pass.sendKeys("Vinhkute98@");
+        //WebElement pass=driver.findElement(By.xpath("//input[@name='password']"));
+        //pass.sendKeys("Vinhkute98@");
+        loginPage.enterPassword("Vinhkute98@");
         //CLickbtn
         Utils.hardWait(3);
-        WebElement click=driver.findElement(By.xpath("//button[@name='login']"));
-        click.click();
+        //WebElement click=driver.findElement(By.xpath("//button[@name='login']"));
+        //click.click();
+        loginPage.clickLoginButton();
+
+        loginPage.enterUsername("thanhvinh231198@gmail.com")
+        .enterPassword("Vinhkute98@")
+        .clickLoginButton();
         WebElement content=driver.findElement(By.xpath("//div[@class='woocommerce-MyAccount-content']"));
         Assert.assertTrue(content.getText().contains("thanhvinh231198"));
+        //String mgs=loginPage.getErrorMessage();
+        //Assert.assertEquals(mgs, "thanhvinh231198");
 
-        WebElement clicksearch=driver.findElement(By.xpath("(//input[@id='s'])[1]"));
-        clicksearch.sendKeys("merc");
+        //WebElement clicksearch=driver.findElement(By.xpath("(//input[@id='s'])[1]"));
+        //clicksearch.sendKeys("merc");
+        //homepage.clickSearch("merc");
         Utils.hardWait();
         
-        WebElement clickitem=driver.findElement(By.xpath("//a[text()=\"Bơm nước xe \"]"));
-        clickitem.click();
+        //WebElement clickitem=driver.findElement(By.xpath("//a[contains()=\"Bơm nước xe \"]"));
+       // clickitem.click();
+        homePage.clickItemlist("Bơm nước xe");
 
         Utils.hardWait();
         WebElement pickXS=driver.findElement(By.xpath("//select[@id=\"pa_xuat-xu\"]"));
         pickXS.click();
+        
+
 
         Utils.hardWait();
-        WebElement clickSX=driver.findElement(By.xpath("//option[@value=\"england\"]"));
-        clickSX.click();
+        //WebElement clickSX=driver.findElement(By.xpath("//option[@value=\"england\"]"));
+        //clickSX.click();
+       homePage.clickXs("germany");
         
+       
         Utils.hardWait();
         WebElement submit=driver.findElement(By.xpath("(//button[@type=\"submit\"])[2]"));
         submit.click();
