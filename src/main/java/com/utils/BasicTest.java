@@ -28,6 +28,16 @@ public abstract class BasicTest {
         // ChromeOptions options = new ChromeOptions();
         // System.setProperty("webdriver.chrome.driver", driverPath);
         // driver = new ChromeDriver(options);
+
+
+
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
+        options.addArguments("window-size=1920,1080");
+        options.addArguments("--no-sanbox");
+
+
+        
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         // Maximize the browser
